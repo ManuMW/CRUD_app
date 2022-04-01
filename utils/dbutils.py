@@ -1,9 +1,10 @@
 import mysql.connector as mysql
 
 def connectDb():
-    return mysql.connect(host="localhost", user="root", password="root", database="words")
+    return mysql.connect(host="localhost", user="root", password="root")
 
 def createSchema():
+    sql0 = '''CREATE DATABASE IF NOT EXISTS words;'''
     sql = '''CREATE TABLE IF NOT EXISTS `words`.`input_word`(`id` INT NOT NULL AUTO_INCREMENT,
     `word` VARCHAR(100) NULL,
     PRIMARY KEY (`id`));'''
@@ -11,6 +12,7 @@ def createSchema():
     connection = connectDb()
     cursor = connection.cursor()
 
+    cursor.execute(sql0)
     cursor.execute(sql)
 
     connection.commit()

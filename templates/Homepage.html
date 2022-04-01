@@ -5,17 +5,20 @@
     <title>Homepage</title>
 </head>
 <body>
-    <form method="POST" action="/">
+<h2> Enter word</h2>
+    <form method="POST" action="/Homepage">
       <input type="text" name="word">
       <input type="submit" value="Submit">
     </form>
-    <form method="POST" action="/">
+    <h2> Delete word</h2>
+    <form method="POST" action="/Homepage">
       <input type="text" name="delete_word">
       <input type="submit" value="Submit">
     </form>
-    <form method="POST" action="/">
+<h2> Update Word</h2>
+    <form method="POST" action="/Homepage">
       <input type="text" name="update_word">
-        <input type="number", name="id_val_update">
+        <input type="number" name="id_val_update">
       <input type="submit" value="Submit">
     </form>
 <h2> Stored words</h2>
@@ -32,6 +35,7 @@
             <td>{{ cell }}</td>
             {% endfor %}
         </tr>
+        {% endfor %}
     </table>
 </form>
 
