@@ -37,12 +37,14 @@ def updateDb(cmd):
     conn = connectDb()
     cur = conn.cursor()
     cur.execute(cmd)
+    conn.commit()
     conn.close()
 
 def deleteFromDb(cmd):
     conn = connectDb()
     cur = conn.cursor()
     cur.execute(cmd)
+    conn.commit()
     conn.close()
 
 createSchema()
